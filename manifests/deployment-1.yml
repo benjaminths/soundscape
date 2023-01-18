@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myakscluster-2dae"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myakscluster-2dae"
+  template:
+    metadata:
+      labels:
+        app: "myakscluster-2dae"
+    spec:
+      containers:
+        - name: "myakscluster-2dae"
+          image: "dockerfiletilesrv.azurecr.io/myakscluster"
+          ports:
+          - containerPort: 8080
