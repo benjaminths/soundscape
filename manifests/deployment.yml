@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myakscluster-f3d3"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myakscluster-f3d3"
+  template:
+    metadata:
+      labels:
+        app: "myakscluster-f3d3"
+    spec:
+      containers:
+        - name: "myakscluster-f3d3"
+          image: "containerokeee.azurecr.io/myakscluster"
+          ports:
+          - containerPort: 8080
